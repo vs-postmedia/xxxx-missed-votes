@@ -19,7 +19,7 @@
 }
 @font-face {
 	font-family: 'BentonSansCond-RegItalic';
-	src: local('BentonSansCond-RegItalic'), url('/public/fonts/BentonSansCond-RegItalic.otf') format('opentype');
+	src: local('BentonSansCond-RegItalic'), url('/fonts/BentonSansCond-RegItalic.otf') format('opentype');
 }
 @font-face {
 	font-family: 'BentonSansCond-Bold';
