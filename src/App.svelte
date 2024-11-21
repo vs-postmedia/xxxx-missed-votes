@@ -62,11 +62,6 @@
 	header > h1 {
 		text-align: center;
 	}
-	header .subhead {
-		margin: 0 auto;
-		max-width: 525px;
-		text-align: center;
-	}
     footer .bottom-row {
         display: flex;
         justify-content: space-between;
