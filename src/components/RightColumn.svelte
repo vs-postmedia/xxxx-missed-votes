@@ -1,7 +1,4 @@
 <script>
-    export let data = [];
-    export let value = '';
-
     // LIBS
     import { onMount } from 'svelte';
 

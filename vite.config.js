@@ -7,7 +7,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/sim-missed-meetings/',
+  base: '/xxxx-missed-votes/',
   // base: process.env.MODE === 'production' ? projectPath : '/',
   plugins: [svelte()],
   resolve: {
