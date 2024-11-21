@@ -2,8 +2,8 @@
     // COMPONENTS
     import { onMount } from 'svelte';
     import { csvParse } from 'd3-dsv';
-    import RightColumn from "$components/RightColumn.svelte";
     import CalHeatmap from "$components/CalHeatmap.svelte";
+    import TextColumn from "$components/TextColumn.svelte";
 
     
 
@@ -35,7 +35,7 @@
 
 <main> 
     <div id="chart-container"> 
-        <RightColumn />
+        <TextColumn />
         <CalHeatmap 
             data={data}
         />
