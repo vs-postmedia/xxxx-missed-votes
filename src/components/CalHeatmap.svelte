@@ -45,7 +45,7 @@
                     text: 'MMM YYYY',
                     textAlign: 'left'
                 },
-                padding: [5,5,5,5],
+                padding: [10,5,20,5],
                 type: 'month'
             },
             itemSelector: container,
@@ -81,16 +81,15 @@
     );
     }
 
-    onMount(() => {
-
-        initHeatmap()
-    });
+    // kick isht off!!!
+    onMount(initHeatmap);
 </script>
 
 <div id="cal-heatmap" bind:this={container}></div>
 
 <style>
     #cal-heatmap {
+        margin-top: 15px;
         width: 160px;
     }
     #app .ch-domain-text {
