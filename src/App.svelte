@@ -69,6 +69,6 @@
 
     #chart-container {
         display: flex;
-        flex-flow: space-between;
+        justify-content: space-between;
     }
 </style>
