@@ -59,8 +59,8 @@
             },
             subDomain: {
                 type: 'xDay',
-                height: 25,
-                width: 25,
+                height: 20,
+                width: 20,
                 radius: 2,
                 label: 'D'
             },
@@ -91,9 +91,7 @@
 
 <style>
     #cal-heatmap {
-        /* position: absolute; */
-        /* margin: 0 auto; */
-        width: 200px;
+        width: 160px;
     }
     #app .ch-domain-text {
         font-size: 1.05rem !important;
