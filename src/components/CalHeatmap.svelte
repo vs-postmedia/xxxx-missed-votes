@@ -11,7 +11,7 @@
     // VARS
     let cal, container;
 
-    $: data, paintCal(cal, data)
+    $: data, paintCal(cal, data);
 
     function initHeatmap() {
         cal = new CalHeatmap();
@@ -21,6 +21,8 @@
     function paintCal(cal, data) {
         if (!cal || data.length < 1) return;
 
+        const domainMax = max(data, d => +d.n);
+
         cal.paint({
             data: {
                 source: data,
@@ -29,20 +31,30 @@
             },
             date: {
                 start: new Date(data[0].vote_date),
-                end: new Date(data[data.length - 1].vote_date)
+                end: new Date('2024-11-05')
+                // end: new Date(data[data.length - 1].vote_date)
             },
             domain: {
                 dynamicDimension: true,
-                label: { position: top },
+                label: { 
+                    offset: {
+                        x: 0,
+                        y: -20
+                    },
+                    position: top,
+                    text: 'MMM YYYY',
+                    textAlign: 'left'
+                },
                 padding: [5,5,5,5],
                 type: 'month'
             },
             itemSelector: container,
+            range: 25,
             scale: { 
                 color: { 
                     type: 'linear',
                     scheme: 'Blues',
-                    domain: [0, 25]
+                    domain: [0, domainMax]
                 }
             },
             subDomain: {
@@ -60,7 +72,7 @@
             {
                 text: function (vote_date, n, dayjsDate) {
                 return (
-                    (n ? `Absent for ${n} votes` : 'No missed votes') + ' on ' + dayjsDate.format('ll')
+                    (n ? `Sim missed ${n} votes` : 'No missed votes') + ' on ' + dayjsDate.format('ll')
                 );
                 },
             },
@@ -69,7 +81,21 @@
     );
     }
 
-    onMount(initHeatmap);
+    onMount(() => {
+
+        initHeatmap()
+    });
 </script>
 
 <div id="cal-heatmap" bind:this={container}></div>
+
+<style>
+    #cal-heatmap {
+        /* position: absolute; */
+        /* margin: 0 auto; */
+        width: 200px;
+    }
+    #app .ch-domain-text {
+        font-size: 1.05rem !important;
+    }
+</style>

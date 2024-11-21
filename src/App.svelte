@@ -2,7 +2,7 @@
     // COMPONENTS
     import { onMount } from 'svelte';
     import { csvParse } from 'd3-dsv';
-    import Chart from "$components/Chart.svelte";
+    import RightColumn from "$components/RightColumn.svelte";
     import CalHeatmap from "$components/CalHeatmap.svelte";
     // import Select from "svelte-select"; // https://github.com/rob-balfre/svelte-select
 
@@ -35,8 +35,6 @@
     async function init() {
         // fetch remote data
         data = await fetchData(dataUrl);
-        // data = data.sort((a,b) => a.vote_date.localeCompare(b.vote_date));
-
         console.log(data)
     }
 
@@ -48,15 +46,18 @@
     <p class="subhead">Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 </header>
 
-<main>   
-    <CalHeatmap 
-        data={data}
-    />
+<main> 
+    <div id="chart-container"> 
+        <CalHeatmap 
+            data={data}
+        />
+        <RightColumn />
+    </div>
 </main>
 
 <footer>
     <p class="note">NOTE: tk.</p>
-    <p class="source">Source:  <a href="https:vancouversun.com" target="_blank">TK</a></p>
+    <p class="source">Source:  <a href="https://opendata.vancouver.ca/explore/dataset/council-voting-records/information/?disjunctive.meeting_type&disjunctive.vote_number&disjunctive.council_member&disjunctive.vote" target="_blank">City of Vancouver</a></p>
 </footer>
   
 <style>
@@ -77,20 +78,8 @@
 		text-align: center;
 	}
 
-    /* COMBOBOX SELECTOR */
-  	:global(.svelte-select) {
-		margin: 1rem auto !important;
-		max-width: 250px;
-  	}
-  	:global(input:focus) {
-		outline: none;
-  	}
-
-	:global(
-		.svelte-select .selected-item,
-		.svelte-select .item,
-		.svelte-select input
-	) {
-		font-family: 'BentonSansCond-Regular', sans;
-	}
+    #chart-container {
+        display: flex;
+        flex-flow: space-between;
+    }
 </style>
