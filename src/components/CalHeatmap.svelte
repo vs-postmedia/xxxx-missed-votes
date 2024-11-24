@@ -6,6 +6,7 @@
     import { onMount } from 'svelte';
     import CalHeatmap from 'cal-heatmap';
     import 'cal-heatmap/cal-heatmap.css';
+    import Legend from 'cal-heatmap/plugins/Legend';
     import Tooltip from 'cal-heatmap/plugins/Tooltip';
 
     // VARS
@@ -37,6 +38,7 @@
             domain: {
                 dynamicDimension: true,
                 label: { 
+                    height: 40,
                     offset: {
                         x: 0,
                         y: -20
@@ -52,15 +54,16 @@
             range: 25,
             scale: { 
                 color: { 
-                    type: 'linear',
+                    // type: 'linear',
+                    type: 'quantile',
                     scheme: 'Blues',
                     domain: [0, domainMax]
                 }
             },
             subDomain: {
                 type: 'xDay',
-                height: 20,
-                width: 20,
+                height: 25,
+                width: 25,
                 radius: 2,
                 label: 'D'
             },
@@ -68,14 +71,21 @@
         },
         [
             [
-            Tooltip,
-            {
-                text: function (vote_date, n, dayjsDate) {
-                return (
-                    (n ? `Sim missed ${n} votes` : 'No missed votes') + ' on ' + dayjsDate.format('ll')
-                );
+                Legend,
+                {
+                    itemSelector: '#legend',
+                    label: 'Absent votes by Ken Sim'
                 },
-            },
+            ],
+            [
+                Tooltip,
+                {
+                    text: function (vote_date, n, dayjsDate) {
+                    return (
+                        (n ? `Sim missed ${n} votes` : 'No missed votes') + ' on ' + dayjsDate.format('ll')
+                    );
+                    },
+                },
             ],
         ]
     );
@@ -85,14 +95,27 @@
     onMount(initHeatmap);
 </script>
 
-<div id="cal-heatmap" bind:this={container}></div>
+<div id="heatmap-container">
+    <!-- <div id="legend"></div> -->
+    <div id="cal-heatmap" bind:this={container}></div>
+</div>
 
 <style>
     #cal-heatmap {
+        margin-left: 25px;
         margin-top: 15px;
-        width: 160px;
+        max-width: 160px;
     }
     #app .ch-domain-text {
         font-size: 1.05rem !important;
+    }
+    #cal-heatmap #legend #ch-plugin-legend text {
+        font-size: 0.7rem;
+    }
+
+    @media screen and (min-width: 450px) {
+        #cal-heatmap {
+           max-width: none;
+        }
     }
 </style>
