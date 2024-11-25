@@ -19,7 +19,7 @@
 
 <div id="right-column">
     <div id="intro" class="step">
-        <p>Mayor Ken Sim has been marked absent on city council votes far more often than previous mayors – and his council colleagues, too.</p>
+        <p>Mayor Ken Sim has been marked absent on city council votes far more often than previous mayors – and his own council colleagues, too.</p>
         <p>The calendar to the right shows how many votes Sim missed on any given day since he was elected. Hover or tap a day to see how many times the mayor was marked “Absent.”</p>
     </div>
     <div id="legend" class="step"></div>

@@ -11,6 +11,8 @@
 
     // VARS
     let cal, container;
+    const legendContainer = '#legend';
+    const legendLabel = 'Sim’s daily absent votes';
 
     $: data, paintCal(cal, data);
 
@@ -73,8 +75,8 @@
             [
                 Legend,
                 {
-                    itemSelector: '#legend',
-                    label: 'Absent votes by Ken Sim'
+                    itemSelector: legendContainer,
+                    label: legendLabel
                 },
             ],
             [
@@ -95,10 +97,7 @@
     onMount(initHeatmap);
 </script>
 
-<div id="heatmap-container">
-    <!-- <div id="legend"></div> -->
-    <div id="cal-heatmap" bind:this={container}></div>
-</div>
+<div id="cal-heatmap" bind:this={container}></div>
 
 <style>
     #cal-heatmap {
@@ -106,12 +105,12 @@
         margin-top: 15px;
         max-width: 160px;
     }
-    #app .ch-domain-text {
+    /* #app .ch-domain-text {
         font-size: 1.05rem !important;
     }
     #cal-heatmap #legend #ch-plugin-legend text {
         font-size: 0.7rem;
-    }
+    } */
 
     @media screen and (min-width: 450px) {
         #cal-heatmap {
