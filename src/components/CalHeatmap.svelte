@@ -83,9 +83,10 @@
                 Tooltip,
                 {
                     text: function (vote_date, n, dayjsDate) {
-                    return (
-                        (n ? `Sim missed ${n} votes` : 'No missed votes') + ' on ' + dayjsDate.format('ll')
-                    );
+                        const voteLabel = n > 1 ? 'votes' : 'vote';
+                        const text = (n ? `Sim missed ${n} ${voteLabel}` : 'No missed votes') + ' on ' + dayjsDate.format('ll')
+                        
+                        return text;
                     },
                 },
             ],

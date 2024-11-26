@@ -1,6 +1,7 @@
 <script>
     // LIBS
     import { onMount } from 'svelte';
+    import sim from '$images/sim.png';
 
     // VARS
 
@@ -19,8 +20,9 @@
 
 <div id="right-column">
     <div id="intro" class="step">
+        <img id="sim-img" src={sim} />
         <p>Mayor Ken Sim has been marked absent on city council votes far more often than previous mayors.</p>
-        <p>The calendar to the right shows how many votes Sim missed on any given day since he was elected. Hover or tap a day to see how many times the mayor was marked “Absent.”</p>
+        <p>The calendar to the right shows how many votes Sim missed on any given day since he was elected. Hover or tap a day to see how many times votes the mayor missed that day.</p>
     </div>
     <div id="legend" class="step"></div>
     <div id="mayor-chart" class="step">
@@ -38,7 +40,7 @@
         <iframe src='https://flo.uri.sh/visualisation/20405084/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='max-width:180px;height:250px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
     </div>
     <div id="metro-meetings" class="step">
-        <p>He isn’t just skipping council meetings. He’s only attended a quarter of the 41 Metro Vancouver committee and board meetings.</p>
+        <p>He isn’t just skipping council meetings. He’s only attended a quarter of  41 committee and board meetings at Metro Vancouver.</p>
         <iframe src='https://flo.uri.sh/visualisation/20405301/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='max-width:180px;height:150px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
     </div>
     <div id="summer24" class="step">
@@ -59,11 +61,20 @@
     .step p {
         margin-bottom: 10px;
     }
+    #sim-img {
+        filter: 
+            brightness(1.15)
+            drop-shadow(0 6px 5px rgba(0, 98, 163, 0.4));
+        float: right;
+        height: 100px;
+        margin: 0 5px 0 10px;
+        width: 100px;
+    }
     #intro {
         top: 0px;
     }
     #legend {
-        top: 200px;
+        top: 225px;
     }
     #mayor-chart {
         top: 350px;
