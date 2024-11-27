@@ -21,7 +21,7 @@
 <div id="right-column">
     <div id="intro" class="step">
         <img id="sim-img" src={sim} alt="Kem Sim"/>
-        <p>Mayor Ken Sim has been marked absent on city council votes far more often than his recent predecessors.</p>
+        <p>Mayor Ken Sim has been absent for city council votes far more often than his recent predecessors.</p>
         <p>The calendar to the right shows how many votes Sim missed on any given day since he was elected. Hover or tap a day to see how many votes the mayor missed that day.</p>
     </div>
     <div id="legend" class="step"></div>
