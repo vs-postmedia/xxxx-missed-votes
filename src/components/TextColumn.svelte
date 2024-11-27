@@ -21,7 +21,7 @@
 <div id="right-column">
     <div id="intro" class="step">
         <img id="sim-img" src={sim} alt="Kem Sim"/>
-        <p>Mayor Ken Sim has been marked absent on city council votes far more often than previous mayors.</p>
+        <p>Mayor Ken Sim has been marked absent on city council votes far more often than his recent predecessors.</p>
         <p>The calendar to the right shows how many votes Sim missed on any given day since he was elected. Hover or tap a day to see how many votes the mayor missed that day.</p>
     </div>
     <div id="legend" class="step"></div>
@@ -40,7 +40,7 @@
         <iframe src='https://flo.uri.sh/visualisation/20405084/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='max-width:200px;height:250px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
     </div>
     <div id="metro-meetings" class="step">
-        <p>He isn’t just skipping council meetings. He’s only attended a quarter of  41 committee and board meetings at Metro Vancouver.</p>
+        <p>He isn’t just skipping council meetings. He’s only attended a quarter of  41 committee and board meetings at Metro Vancouver, though he sometimes sends an ABC councillor in his place.</p>
         <iframe src='https://flo.uri.sh/visualisation/20405301/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='max-width:200px;height:150px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
     </div>
     <div id="summer24" class="step">
