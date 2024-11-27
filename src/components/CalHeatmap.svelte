@@ -102,7 +102,7 @@
 
 <style>
     #cal-heatmap {
-        margin-left: 25px;
+        margin-left: 0;
         margin-top: 15px;
         max-width: 160px;
     }
@@ -116,6 +116,7 @@
 
     @media screen and (min-width: 450px) {
         #cal-heatmap {
+           margin-left: 25px;
            max-width: none;
         }
     }

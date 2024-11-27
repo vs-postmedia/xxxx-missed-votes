@@ -20,7 +20,7 @@
 
 <div id="right-column">
     <div id="intro" class="step">
-        <img id="sim-img" src={sim} />
+        <img id="sim-img" src={sim} alt="Kem Sim image"/>
         <p>Mayor Ken Sim has been marked absent on city council votes far more often than previous mayors.</p>
         <p>The calendar to the right shows how many votes Sim missed on any given day since he was elected. Hover or tap a day to see how many votes the mayor missed that day.</p>
     </div>
@@ -52,7 +52,7 @@
     #right-column {
         height: 1000vw;
         position: relative;
-        min-width: 54%;
+        min-width: 52%;
     }
     .step {
         flex-grow: 3;
@@ -66,15 +66,15 @@
             brightness(1.15)
             drop-shadow(0 6px 5px rgba(0, 98, 163, 0.4));
         float: right;
-        height: 100px;
+        height: 75px;
         margin: 0 5px 0 10px;
-        width: 100px;
+        width: 75px;
     }
     #intro {
         top: 0px;
     }
     #legend {
-        top: 225px;
+        top: 275px;
     }
     #mayor-chart {
         top: 350px;
@@ -93,5 +93,18 @@
     }
     #summer24 {
         top: 3800px;
+    }
+
+    @media screen and (min-width: 450px) {
+        #right-column {
+            min-width: 54%;
+        }
+        #sim-img {
+            height: 100px;
+            width: 100px;
+        }
+        #legend {
+            top: 225px;
+        }
     }
 </style>
