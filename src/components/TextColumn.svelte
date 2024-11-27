@@ -65,9 +65,9 @@
         filter: 
             brightness(1.15)
             drop-shadow(0 6px 5px rgba(0, 98, 163, 0.4));
-        float: right;
+        float: left;
         height: 75px;
-        margin: 0 5px 0 10px;
+        margin: 0 10px 0 0;
         width: 75px;
     }
     #intro {
