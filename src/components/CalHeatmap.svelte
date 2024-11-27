@@ -106,13 +106,6 @@
         margin-top: 15px;
         max-width: 160px;
     }
-    #ch-tooltip {
-        font-size: 1rem !important;
-    }
-    #ch-tooltip #ch-tooltip-body {
-        color: #FFF;
-        font-size: 1rem !important;
-    }
 
     @media screen and (min-width: 450px) {
         #cal-heatmap {
