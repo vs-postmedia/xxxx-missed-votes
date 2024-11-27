@@ -74,7 +74,7 @@
         top: 0px;
     }
     #legend {
-        top: 275px;
+        top: 285px;
     }
     #mayor-chart {
         top: 350px;
