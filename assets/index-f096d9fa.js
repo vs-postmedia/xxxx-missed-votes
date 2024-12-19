@@ -9,7 +9,7 @@ var __publicField = (obj, key, value) => {
   return value;
 };
 var require_index_001 = __commonJS({
-  "assets/index-db31ed91.js"(exports, module) {
+  "assets/index-f096d9fa.js"(exports, module) {
     (function polyfill() {
       const relList = document.createElement("link").relList;
       if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -26105,7 +26105,9 @@ ${extraStyle}`
         cal2.paint(
           {
             data: {
-              source: data3,
+              requestInit: { mode: "same-origin" },
+              // source: data,
+              source: "https://vs-postmedia-data.sfo2.digitaloceanspaces.com/misc/sim-absent-daily.csv",
               x: "vote_date",
               y: (d) => +d["n"]
             },
@@ -26313,7 +26315,6 @@ ${extraStyle}`
       async function fetchData(url) {
         const resp = await fetch(url);
         $$invalidate(0, data2 = await resp.text());
-        console.log(data2);
         return csvParse(data2);
       }
       async function init2() {
